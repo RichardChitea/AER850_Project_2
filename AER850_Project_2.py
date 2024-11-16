@@ -72,7 +72,6 @@ model.compile(
     metrics = ["accuracy"]
     )
 
-
 early_stopping = callbacks.EarlyStopping(
     monitor = "val_accuracy",  
     patience = 10,  
@@ -114,11 +113,4 @@ model_filename = f"model_{timestamp}.keras"
 
 model_path = os.path.join(model_folder, model_filename)
 model.save(model_path)
-
-
-#Test model
-model = models.load_model(model_path, safe_mode=False)
-test_loss, test_acc = model.evaluate(x=test_images)
-
-
 
