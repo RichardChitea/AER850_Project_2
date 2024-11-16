@@ -3,13 +3,15 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 from tensorflow import keras
-from keras import utils, Sequential, layers, regularizers, callbacks
+from keras import utils, Sequential, layers, regularizers, callbacks, models
 import matplotlib.pyplot as plt
+from datetime import datetime
 
 
 # Defining folder locations
 script_dir = os.path.dirname(os.path.abspath(__file__))
 data_folder = os.path.join(script_dir, "data")
+model_folder = os.path.join(script_dir, "models")
 
 test_folder = os.path.join(data_folder, "test")
 train_folder = os.path.join(data_folder, "train")
@@ -106,6 +108,17 @@ plt.legend()
 plt.show()
 
 
+# Save model
+timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+model_filename = f"model_{timestamp}.h5"
+
+model_path = os.path.join(model_folder, model_filename)
+model.save(model_path)
+
+
+#Test model
+model = models.load_model(model_path, safe_mode=False)
+test_loss, test_acc = model.evaluate(x=test_images)
 
 
 
