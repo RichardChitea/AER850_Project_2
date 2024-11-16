@@ -55,6 +55,9 @@ model = Sequential(
         layers.MaxPooling2D(pool_size=(2, 2)),
         layers.Conv2D(filters=128, kernel_size=3, padding="same", activation="relu"),
         layers.BatchNormalization(),
+        layers.MaxPooling2D(pool_size=(2, 2)),
+        layers.Conv2D(filters=256, kernel_size=3, padding="same", activation="relu"),
+        layers.BatchNormalization(),
         
         layers.Flatten(),
         
