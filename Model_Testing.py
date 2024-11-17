@@ -78,9 +78,3 @@ for i, img_path in enumerate(img_paths):
     plt.axis('off')
     plt.title(f"True Crack Classification Label: {class_labels[i]}\nPredicted Crack Classification Label: {class_labels[np.argmax(predictions[i])]}")
     plt.show()
-
-
-
-
-
-

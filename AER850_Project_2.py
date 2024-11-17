@@ -116,4 +116,3 @@ model_filename = f"model_{timestamp}.keras"
 
 model_path = os.path.join(model_folder, model_filename)
 model.save(model_path)
-
