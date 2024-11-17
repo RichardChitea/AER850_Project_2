@@ -34,7 +34,7 @@ test_images = utils.image_dataset_from_directory(
 
 
 # Test model
-model_path = os.path.join(model_folder,"model_2024-11-16_15-05-47.keras")
+model_path = os.path.join(model_folder,"model_2024-11-17_09-28-50.keras")
 
 model = models.load_model(model_path, safe_mode=False)
 test_loss, test_acc = model.evaluate(x=test_images)

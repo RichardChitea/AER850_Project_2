@@ -61,9 +61,9 @@ model = Sequential(
         
         layers.Flatten(),
         
-        layers.Dense(64, activation="leaky_relu", kernel_regularizer=regularizers.L1L2()),
+        layers.Dense(96, activation="leaky_relu", kernel_regularizer=regularizers.L1L2()),
         layers.Dropout(0.3),
-        layers.Dense(64, activation="leaky_relu", kernel_regularizer=regularizers.L1L2()),
+        layers.Dense(96, activation="leaky_relu", kernel_regularizer=regularizers.L1L2()),
         layers.Dropout(0.3),
         layers.Dense(3, activation="softmax", kernel_regularizer=regularizers.L1L2())
      ]
